@@ -1,0 +1,4 @@
+openai==1.64.0
+keyboard
+psutil
+dotenv
