@@ -3,4 +3,3 @@ keyboard
 psutil
 dotenv
 SpeechRecognition
-pyaudio
