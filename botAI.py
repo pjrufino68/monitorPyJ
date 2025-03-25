@@ -4,7 +4,6 @@ import openai
 import keyboard
 import os
 import psutil
-import pyaudio
 import time
 from dotenv import load_dotenv
 from openai import OpenAI
