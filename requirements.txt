@@ -3,4 +3,3 @@ keyboard
 psutil
 dotenv
 SpeechRecognition
-pyaudio==0.2.12
