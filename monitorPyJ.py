@@ -15,7 +15,7 @@ load_dotenv(override=True)
 
 # Configuração da página
 st.set_page_config(page_title="🚍 monitorPyJ", layout="wide")
-st.title("📡 monitorPyJ / Monitoramento de Veículos")
+st.title("📡 monitorPyJ")
 
 hide_st_style = """
             <style>
@@ -87,8 +87,7 @@ while True:
                 df = df.sort_values("codigo")
                 
                 df["local"] = df.apply(
-                    lambda row: f"[Mapa](https://www.google.com/maps?q={row['latitude']},{row['longitude']})",
-                    axis=1
+                    lambda row: f"[Mapa](https://www.google.com/maps?q={row['latitude']},{row['longitude']})", axis=1
                 )
                 
                 if 'dataHora' in df.columns:
@@ -107,6 +106,7 @@ while True:
                 df_view = df.drop(columns=["latitude", "longitude"]).rename(columns={"sentido": "garagem"})
                 with placeholder_tabela.container():
                     st.write(df_view.to_markdown(index=False), unsafe_allow_html=True)
+                    
                     col1, col2, col3 = st.columns(3)
                     with col1:
                         st.metric(label = "Dentro:", value = dentro)
